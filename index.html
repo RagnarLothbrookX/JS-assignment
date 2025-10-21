@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <!-- Motivational Quote -->
+        <div class="card shadow mb-4" id="quoteCard">
+          <div class="card-body text-center">
+            <i class="bi bi-quote text-primary" style="font-size: 2rem;"></i>
+            <p class="mb-2 fst-italic" id="quoteText">Loading inspiration...</p>
+            <small class="text-muted" id="quoteAuthor">- Anonymous</small>
+          </div>
+        </div>
+
+        <div class="card shadow-lg">
+          <div class="card-header bg-primary text-white">
+            <h1 class="text-center mb-0"><i class="bi bi-check2-square me-2"></i>My Todo List</h1>
+          </div>
+          <div class="card-body">
+            <!-- Input Task -->
+            <div class="mb-3">
+              <label for="taskName" class="form-label fw-bold">Task Name</label>
+              <input type="text" id="taskName" class="form-control form-control-lg" placeholder="Enter your task...">
+            </div>
+            <div class="mb-3">
+              <label for="taskUrgency" class="form-label fw-bold">Priority Level</label>
+              <select id="taskUrgency" class="form-control form-control-lg">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+            <button id="addTodo" class="btn btn-primary btn-lg w-100 mb-4">
+              <i class="bi bi-plus-circle me-2"></i>Add Task
+            </button>
+
+            <!-- Todo List Section -->
+            <div id="todoList">
+              <!-- Todo items will be appended here as cards -->
+            </div>
+
+            <!-- Save Button -->
+            <button id="save-btn" class="btn btn-success btn-lg w-100 mt-4">
+              <i class="bi bi-cloud-upload me-2"></i>Save to Cloud
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- axios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"
+    integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Including data.js and script.js -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+
+</html>
